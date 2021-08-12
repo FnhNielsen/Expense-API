@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.With;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @NoArgsConstructor
 @With
@@ -20,13 +20,16 @@ public class Expense
     private float price;
     @Getter
     private LocalDateTime expenseDate;
+    @Getter
+    private Timestamp timestamp;
 
-    public Expense(int id, String name, float price, LocalDateTime expenseDate)
+    public Expense(int id, String name, float price, LocalDateTime expenseDate, Timestamp timestamp)
     {
         this.id = id;
         this.name = name;
         this.price = price;
         this.expenseDate = expenseDate;
+        this.timestamp = timestamp;
     }
 }
 
